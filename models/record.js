@@ -18,8 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     record_type: DataTypes.STRING,
     record_duration: DataTypes.INTEGER,
     date: DataTypes.DATE,
-    student_id: DataTypes.INTEGER,
-    employee_id: DataTypes.INTEGER
+    user_id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'record',

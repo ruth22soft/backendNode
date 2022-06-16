@@ -53,7 +53,7 @@ function save(req,res) {
                 sex: {type:"string", min:1, max:6, optional: false},
                 phone_no: {type: "string", min:13, max:13},
                 city: {type:"string", min:2, max:13},
-                sub_city: {type:"string"},
+                sub_city: {type:"string"}
                 wereda: {type:"string", min:1, max:100},
                 house_no: {type:"string", min:1, max:100},
                 emergency_contact_full_name: {type:"string", min:1, max:100},

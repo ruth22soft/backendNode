@@ -1,45 +1,30 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('accusations', {
+    await queryInterface.createTable('announcements', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      accusation_title: {
+      announcement_type: {
         type: Sequelize.STRING
       },
-      accusation_type: {
-        type: Sequelize.STRING
-      },
-      accusation_detail: {
+      detail: {
         type: Sequelize.TEXT
       },
-      accusation_file: {  
+      file: {
         type: Sequelize.BLOB
       },
-      accusor: {
-        type: Sequelize.STRING
-      },
-      accused: {
-        type: Sequelize.STRING
-      },
-      witness1: {
-        type: Sequelize.STRING
-      },
-      witness2: {
-        type: Sequelize.STRING
-      },
-      witness3: {
-        type: Sequelize.STRING
-      },
       date: {
-        type: Sequelize.DATEONLY
+        type: Sequelize.DATE
       },
-      verifiedBy: {
-        type: sequelize.STRING
+      approved: {
+        type: Sequelize.STRING
+      },
+      admin_id: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
@@ -49,9 +34,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
+      
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('accusations');
+    await queryInterface.dropTable('announcements');
   }
 };

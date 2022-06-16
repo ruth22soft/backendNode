@@ -35,9 +35,6 @@ module.exports = {
       city: {
         type: Sequelize.STRING
       },
-      sub_city: {
-        type: Sequelize.STRING
-      },
       wereda: {
         type: Sequelize.STRING
       },

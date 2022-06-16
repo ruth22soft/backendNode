@@ -10,8 +10,7 @@ function save(req,res) {
     models.user.findOne({where:{email:req.body.email}}).then(result =>{
         if(result){
             res.status(409).json({
-                message: "Email already exists",
-                error:error
+                message: "Email already exists"
             });
         }else{
             bcryptjs.genSalt(10, function(err, salt) {
@@ -53,18 +52,11 @@ function save(req,res) {
                 sex: {type:"string", min:1, max:6, optional: false},
                 phone_no: {type: "string", min:13, max:13},
                 city: {type:"string", min:2, max:13},
-                sub_city: {type:"string"},
                 wereda: {type:"string", min:1, max:100},
                 house_no: {type:"string", min:1, max:100},
                 emergency_contact_full_name: {type:"string", min:1, max:100},
                 emergency_contact_phone: {type:"string", min:13, max:13},
-                date_of_entrance: {type:"date"},
-                job_position: {type:"string"},
-                year: {type:"integer"},
-                department: {type: "string"},
-                section:{type:"string"},
-                block:{type:"integer"},
-                dorm:{type:"integer"}
+                date_of_entrance: {type:"date"}
             }
         
             const v = new Validator();
@@ -93,7 +85,7 @@ function save(req,res) {
         
         });
 
-    }  
+        }   
     }).catch(error => {
 
     });

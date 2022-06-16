@@ -36,11 +36,8 @@ module.exports = {
         type: Sequelize.STRING
       },
       date: {
-        type: Sequelize.DATEONLY
-      },
-      verifiedBy: {
-        type: sequelize.STRING
-      },
+        type: Sequelize.DATE
+      }
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
@@ -48,6 +45,12 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      },
+      student_id: {
+        type: Sequelize.INTEGER
+      },
+      employee_id: {
+        type: Sequelize.INTEGER
       }
     });
   },

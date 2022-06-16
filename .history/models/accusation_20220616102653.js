@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
     witness1: DataTypes.STRING,
     witness2: DataTypes.STRING,
     witness3: DataTypes.STRING,
-    verifiedBy: DataTypes.STRING,///this need to have the default value of the logged in admin
+    verifiedBy: DataTypes.STRING,
     date: DataTypes.DATEONLY,
   }, {
     sequelize,

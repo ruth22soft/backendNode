@@ -1,30 +1,18 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('messages', {
+    await queryInterface.createTable('role', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      content: {
+      role_type: {
         type: Sequelize.STRING
       },
-      file: {
-        type: Sequelize.BLOB
-      },
-      message_status: {
+      rights: {
         type: Sequelize.STRING
-      },
-      date: {
-        type: Sequelize.DATEONLY
-      },
-      user_id: {
-        type: Sequelize.INTEGER
-      },
-      admin_id: {
-        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
@@ -33,10 +21,11 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
-      }
+      },
+     
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('messages');
+    await queryInterface.dropTable('conversations');
   }
 };

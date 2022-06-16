@@ -1,27 +1,30 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('messages', {
-      id: {
+    await queryInterface.createTable('hearingSchedules', {
+    id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      content: {
-        type: Sequelize.STRING
-      },
-      file: {
-        type: Sequelize.BLOB
-      },
-      message_status: {
+      hearing_type: {
         type: Sequelize.STRING
       },
       date: {
-        type: Sequelize.DATEONLY
+        type: Sequelize.DATE
       },
-      user_id: {
-        type: Sequelize.INTEGER
+      starting: {
+        type: Sequelize.DATE
+      },
+      duration: {
+        type: Sequelize.DOUBLE
+      },
+      description: {
+        type: Sequelize.TEXT
+      },
+      file: {
+        type: Sequelize.BLOB
       },
       admin_id: {
         type: Sequelize.INTEGER
@@ -33,10 +36,13 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      },
+      admin_id: {
+        type: Sequelize.INTEGER
       }
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('messages');
+    await queryInterface.dropTable('hearingSchedules');
   }
 };
