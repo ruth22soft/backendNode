@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     description: DataTypes.TEXT,
     file: DataTypes.BLOB,
     admin_id: DataTypes.INTEGER,
-    accusant_id: DataTypes.INTEGER
+    accusation_id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'hearingSchedule',

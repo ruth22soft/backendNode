@@ -5,7 +5,7 @@ const app = express();
 
 const userRoute = require('./routers/users');
 const accusationRoute = require('./routers/accusations');
-const roleRoute = require('./routers/role');
+const roleRoute = require('./routers/roles');
 const complainRoute = require('./routers/complains');
 const scheduleRoute = require('./routers/schedules');
 const recordRoute = require('./routers/records');

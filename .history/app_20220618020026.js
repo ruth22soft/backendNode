@@ -1,0 +1,21 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+
+const app = express();
+
+const userRoute = require('./routers/users');
+const accusationRoute = require('./routers/accusations');
+const roleRoute = require('./routers/roles');
+
+
+
+app.use(bodyParser.json());
+app.use("/users", userRoute);
+app.use("/accusations", accusationRoute);
+app.use("/roles", roleRoute);
+
+
+
+
+
+module.exports = app

@@ -3,9 +3,8 @@ const Validator = require('fastest-validator');
 const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-
 function save(req,res) {
-   // console.log(req.body);
+    console.log(req.body);
 
     models.user.findOne({where:{email:req.body.email}}).then(result =>{
         if(result){
@@ -17,7 +16,7 @@ function save(req,res) {
             bcryptjs.genSalt(10, function(err, salt) {
                 bcryptjs.hash(req.body.password, salt, (err, hash) => {
         
-                 
+                
             const user = {
                 first_name: req.body.first_name,
                 middle_name: req.body.middle_name,
@@ -67,7 +66,7 @@ function save(req,res) {
                 dorm:{type:"integer"}
             }
         
-            /*  const v = new Validator();
+            const v = new Validator();
             const validationResponse = v.validate(user, schema);
         
             if(validationResponse !== true) {
@@ -75,8 +74,8 @@ function save(req,res) {
                     message: "Validation error",
                     error: validationResponse
                 });
-            }  */
-             
+            }
+            
             //to create a user
             models.user.create(user).then(result =>{
                 res.status(201).json({
@@ -89,14 +88,14 @@ function save(req,res) {
                     error: error
                 });
             });
-         });
+        });
         
         });
 
     }  
     }).catch(error => {
 
-    }); 
+    });
    
 }
 
@@ -190,51 +189,11 @@ function show(req,res) {
                 });
             })
         }
-
-        //log in
-        function login(req,res){
-            models.user.findOne({where:{email: req.body.email}}).then(user => {
-                if(user === null){
-                    res.status(401).json({
-                        message:"Invalid Credentials",
-                    });
-                }else{
-                    bcryptjs.compare(req.body.password, user.password, function(err, result){
-                        if(result){
-                            const token = jwt.sign({
-                                email: user.email,
-                                userId: user.id
-
-                            },'secret', function(err,token){
-                                res.status(200).json({
-                                    message: "Authentication Successful",
-                                    token: token
-                                });
-                            });
-                        }else{
-                            res.status(401).json({
-                                message: "Invalid Credentials",
-                                token: token
-                            });
-
-                        }
-                    });
-                }
+        module.exports = {
+            save: save,
+            show: show,
+            index:index,
+            update: update,
+            destroy: destroy
         
-            }).catch(error => {
-
-            });
-           
-
         }
-                
-    
-module.exports = {
-    save: save,
-    show: show,
-    index:index,
-    update: update,
-    destroy: destroy,
-    login: login
-
-}

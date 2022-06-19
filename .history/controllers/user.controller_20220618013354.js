@@ -67,7 +67,7 @@ function save(req,res) {
                 dorm:{type:"integer"}
             }
         
-            /*  const v = new Validator();
+          /*   const v = new Validator();
             const validationResponse = v.validate(user, schema);
         
             if(validationResponse !== true) {
@@ -75,8 +75,8 @@ function save(req,res) {
                     message: "Validation error",
                     error: validationResponse
                 });
-            }  */
-             
+            } 
+             */
             //to create a user
             models.user.create(user).then(result =>{
                 res.status(201).json({

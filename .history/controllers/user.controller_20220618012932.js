@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 
 function save(req,res) {
    // console.log(req.body);
-
+/* 
     models.user.findOne({where:{email:req.body.email}}).then(result =>{
         if(result){
             res.status(409).json({
@@ -17,7 +17,7 @@ function save(req,res) {
             bcryptjs.genSalt(10, function(err, salt) {
                 bcryptjs.hash(req.body.password, salt, (err, hash) => {
         
-                 
+                 */
             const user = {
                 first_name: req.body.first_name,
                 middle_name: req.body.middle_name,
@@ -66,8 +66,8 @@ function save(req,res) {
                 block:{type:"integer"},
                 dorm:{type:"integer"}
             }
-        
-            /*  const v = new Validator();
+        /* 
+            const v = new Validator();
             const validationResponse = v.validate(user, schema);
         
             if(validationResponse !== true) {
@@ -75,8 +75,8 @@ function save(req,res) {
                     message: "Validation error",
                     error: validationResponse
                 });
-            }  */
-             
+            } */
+            
             //to create a user
             models.user.create(user).then(result =>{
                 res.status(201).json({
@@ -89,14 +89,14 @@ function save(req,res) {
                     error: error
                 });
             });
-         });
+       /*  });
         
         });
 
     }  
     }).catch(error => {
 
-    }); 
+    }); */
    
 }
 

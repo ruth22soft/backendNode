@@ -1,24 +1,15 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('accusations', {
+    await queryInterface.createTable('userAccusations', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      accusation_title: {
-        type: Sequelize.STRING
-      },
-      accusation_type: {
-        type: Sequelize.STRING
-      },
-      accusation_detail: {
-        type: Sequelize.TEXT
-      },
-      accusation_file: {  
-        type: Sequelize.BLOB
+      date: {
+        type: Sequelize.DATE
       },
       accusor: {
         type: Sequelize.STRING
@@ -35,12 +26,6 @@ module.exports = {
       witness3: {
         type: Sequelize.STRING
       },
-      date: {
-        type: Sequelize.DATEONLY
-      },
-      verifiedBy: {
-        type: Sequelize.STRING
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
@@ -52,6 +37,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('accusations');
+    await queryInterface.dropTable('userAccusations');
   }
 };

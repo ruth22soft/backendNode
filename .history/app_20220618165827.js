@@ -16,7 +16,7 @@ const notificationRoute = require('./routers/notifications');
 app.use(bodyParser.json());
 app.use("/users", userRoute);
 app.use("/accusations", accusationRoute);
-app.use("/role", roleRoute);
+app.use("/roles", roleRoute);
 app.use("/complains", complainRoute);
 app.use("/schedule", scheduleRoute);
 app.use("/record", recordRoute);
