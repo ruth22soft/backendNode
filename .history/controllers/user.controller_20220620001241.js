@@ -65,8 +65,7 @@ function save(req,res) {
                 department: {type: "string"},
                 section:{type:"string"},
                 block:{type:"integer"},
-                dorm:{type:"integer"},
-                role_type:{type:"string"}
+                dorm:{type:"integer"}
             }
         
             /*  const v = new Validator();
@@ -160,8 +159,7 @@ function show(req,res) {
             house_no: req.body.house_no,
             emergency_contact_full_name: req.body.emergency_contact_full_name,
             emergency_contact_phone: req.body.emergency_contact_phone,
-            date_of_entrance: req.body.date_of_entrance,
-            role_type: req.body.role_type 
+            date_of_entrance: req.body.date_of_entrance   
             }
 
             const userId = req.params.id;

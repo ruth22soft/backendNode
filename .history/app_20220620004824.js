@@ -5,6 +5,7 @@ const app = express();
 
 const userRoute = require('./routers/users');
 const accusationRoute = require('./routers/accusations');
+const roleRoute = require('./routers/role');
 const complainRoute = require('./routers/complains');
 const scheduleRoute = require('./routers/schedules');
 const recordRoute = require('./routers/records');
@@ -15,6 +16,7 @@ const notificationRoute = require('./routers/notifications');
 app.use(bodyParser.json());
 app.use("/users", userRoute);
 app.use("/accusations", accusationRoute);
+app.use("/role", roleRoute);
 app.use("/complains", complainRoute);
 app.use("/schedule", scheduleRoute);
 app.use("/record", recordRoute);
