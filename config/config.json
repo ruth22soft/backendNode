@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "Ruth22@mysql",
-    "database": "disciplinary_db",
+    "password": "password",
+    "database": "ddb",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
