@@ -4,7 +4,11 @@
   "description": "A REST API with nodejs and Mysql",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
     "start": "nodemon server.js -p 3000 ",
+=======
+    "start": "nodemon server.js -p 3000",
+>>>>>>> e7324e2a5b260ec67abda8fb75529a837cdc2d62
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
